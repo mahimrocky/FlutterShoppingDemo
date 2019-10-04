@@ -18,7 +18,14 @@ class _HomePageState extends State<HomePage> {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
       _name = prefs.getString("usreName");
+      print("Name: "+_name);
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getUserName();
   }
 
   @override
